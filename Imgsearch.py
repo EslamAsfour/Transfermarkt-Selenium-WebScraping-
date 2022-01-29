@@ -38,8 +38,8 @@ with open('E:\BI Dev ITI\Scraping\out.csv', mode='a') as file_:
         driver.get(path)
         # Find the search field to enter the player name
         try:
-            # Wait max 20 seconds to get the url
-            img = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id="yw0"]/table/tbody/tr[1]/td[1]/table/tbody/tr[1]/td[1]/a/img')) )
+            # Wait max 10 seconds to get the url
+            img = WebDriverWait(driver, 8).until(EC.presence_of_element_located((By.XPATH, '//*[@id="yw0"]/table/tbody/tr[1]/td[1]/table/tbody/tr[1]/td[1]/a/img')) )
             # Get the src attribute from the tag
             # Change img size from small to big
             url =  img.get_attribute("src").replace('small','big')
